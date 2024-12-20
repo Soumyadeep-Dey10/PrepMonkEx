@@ -1,7 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { User, LogOut } from 'lucide-react'
-import './header.css'
+import './Header.css'
 import toast, { Toaster } from 'react-hot-toast';
 import axios from 'axios';
 import { useAuth } from "../../Context/AuthProvider";
