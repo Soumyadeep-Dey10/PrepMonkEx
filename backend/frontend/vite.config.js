@@ -8,7 +8,7 @@ export default defineConfig({
     port: 3050, //current backend port
     proxy: {
       "/api": {
-        target: "http://localhost:3000", //localhost new port
+        target: "https://prepmonk-five.vercel.app/", //localhost new port
         changeOrigin: true,
       },
     },
