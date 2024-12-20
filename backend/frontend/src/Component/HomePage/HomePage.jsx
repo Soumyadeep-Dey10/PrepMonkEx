@@ -1,11 +1,20 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTextAnimation } from '/src/hooks/useTextAnimation';
-import { FaFacebook, FaGooglePlus, FaTwitter, FaLinkedin, FaPinterestP
-} from 'react-icons/fa';
+import { FaFacebook, FaGooglePlus, FaTwitter, FaLinkedin } from 'react-icons/fa';
 import './HomePage.css';
 import { Link } from 'react-router-dom';
 
+// Importing images
+import mocktestImage from '/src/assets/mocktest.png';
+import interviewImage from '/src/assets/interview.jpg';
+import practiceImage from '/src/assets/practice.jpeg';
+import quizImage from '/src/assets/quiz.jpg';
+
+import parthaImage from '/src/assets/Partha.jpg';
+import dipImage from '/src/assets/Dip.jpg';
+import soumoImage from '/src/assets/Soumo.jpg';
+import biswaImage from '/src/assets/Biswa.jpg';
 
 const Homepage = () => {
   const navigate = useNavigate();
@@ -30,16 +39,14 @@ const Homepage = () => {
           <li><Link to="#team">Team</Link></li>
           <li><Link to="#contact">Contact</Link></li>
         </ul>
-        <button className="homepage-login-button"
-onClick={handleLoginButtonClick}>Register / Login</button>
+        <button className="homepage-login-button" onClick={handleLoginButtonClick}>Register / Login</button>
       </nav>
 
       <section id="home" className="homepage-hero">
         <div className="homepage-hero-content">
-          <h1 className="typing-text">{useTextAnimation('Welcome to Our Amazing Company',100,1000)}</h1>
-          <p className="typing-text">{useTextAnimation('Discover excellence in everything we do',70,1000)}</p>
-          <button className="homepage-cta-button"
-onClick={handleLoginButtonClick}>Learn More</button>
+          <h1 className="typing-text">{useTextAnimation('Welcome to Our Amazing Company', 100, 1000)}</h1>
+          <p className="typing-text">{useTextAnimation('Discover excellence in everything we do', 70, 1000)}</p>
+          <button className="homepage-cta-button" onClick={handleLoginButtonClick}>Learn More</button>
         </div>
       </section>
 
@@ -48,54 +55,43 @@ onClick={handleLoginButtonClick}>Learn More</button>
         <h2>Our Facilities</h2>
         <div className="homepage-offer-grid">
           {[
-            { name: 'MOCK TEST', image: 'src/assets/mocktest.png' },
-            { name: 'INTERVIEW PREPARATION', image:
-'src/assets/interview.jpg' },
-            { name: 'PRACTICE SET WITH EXPLANATION', image:
-'src/assets/practice.jpeg' },
-            { name: 'QUIZ', image: 'src/assets/quiz.jpg' },
+            { name: 'MOCK TEST', image: mocktestImage },
+            { name: 'INTERVIEW PREPARATION', image: interviewImage },
+            { name: 'PRACTICE SET WITH EXPLANATION', image: practiceImage },
+            { name: 'QUIZ', image: quizImage },
           ].map((offer, index) => (
             <div key={index} className="homepage-offer-card">
               <img src={offer.image} alt={offer.name} />
               <div className="homepage-offer-content">
                 <h3>{offer.name}</h3>
-                <p>Experience the best in {offer.name.toLowerCase()}
-with our tailored programs.</p>
-                {/* <Link to="#" className="homepage-learn-more-link">
-                  Learn More <span className="homepage-chevron-icon">›</span>
-                </a> */}
+                <p>Experience the best in {offer.name.toLowerCase()} with our tailored programs.</p>
               </div>
             </div>
           ))}
         </div>
       </section>
 
+      {/* Team Section */}
       <section id="team" className="homepage-team">
         <h2>Meet Our Team</h2>
         <div className="homepage-team-grid">
           {[
-      { name: 'ParthaSarathi', role: 'Prompt Engineer', image:
-'/src/assets/Partha.jpg' },
-      { name: 'Dip', role: 'Documentation Expert', image: '/src/assets/Dip.jpg' },
-      { name: 'Soumyadeep', role: 'Web Dev', image:
-'/src/assets/Soumo.jpg' },
-      { name: 'Biswajit', role: 'Full stack Dev', image:
-'/src/assets/Biswa.jpg' },
-    ].map((member, index) => (
+            { name: 'ParthaSarathi', role: 'Prompt Engineer', image: parthaImage },
+            { name: 'Dip', role: 'Documentation Expert', image: dipImage },
+            { name: 'Soumyadeep', role: 'Web Dev', image: soumoImage },
+            { name: 'Biswajit', role: 'Full Stack Dev', image: biswaImage },
+          ].map((member, index) => (
             <div key={index} className="homepage-team-member">
               <div className="homepage-member-image-container">
-                <img src={member.image} alt={member.name}
-className="homepage-member-image" />
+                <img src={member.image} alt={member.name} className="homepage-member-image" />
               </div>
               <div className="homepage-member-details">
                 <h3>{member.name}</h3>
                 <p className="homepage-member-role">{member.role}</p>
                 <ul className="homepage-social-links">
-                <li><Link to="#"><FaFacebook /></Link></li>
-              <li><Link to="#"><FaTwitter /></Link></li>
-              <li><Link to="#"><FaLinkedin /></Link></li>
-              {/* <li><Link to="#"><FaPinterestP /></a></li> */}
-
+                  <li><Link to="#"><FaFacebook /></Link></li>
+                  <li><Link to="#"><FaTwitter /></Link></li>
+                  <li><Link to="#"><FaLinkedin /></Link></li>
                 </ul>
               </div>
             </div>
@@ -103,12 +99,12 @@ className="homepage-member-image" />
         </div>
       </section>
 
+      {/* Footer Section */}
       <footer className="homepage-footer">
         <div className="homepage-footer-content">
           <div className="homepage-footer-section">
             <h3>About Us</h3>
-            <p>We are committed to providing exceptional services and
-experiences to our valued customers.</p>
+            <p>We are committed to providing exceptional services and experiences to our valued customers.</p>
           </div>
           <div className="homepage-footer-section">
             <h3>Quick Links</h3>
