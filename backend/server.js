@@ -15,7 +15,7 @@ const app = express();
 
 // Configure CORS with the desired options
 const corsOptions = {
-    origin: "http://localhost:3050", // Allow requests from this origin
+    origin: "https://prepmonk.onrender.com", // Allow requests from this origin
     methods: ["GET", "POST"],       // Allow only GET and POST requests
   };
   
