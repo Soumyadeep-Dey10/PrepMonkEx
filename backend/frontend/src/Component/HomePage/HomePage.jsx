@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useTextAnimation } from '/src/hooks/useTextAnimation';
 import { FaFacebook, FaGooglePlus, FaTwitter, FaLinkedin, FaPinterestP
 } from 'react-icons/fa';
-import './Homepage.css';
+import './HomePage.css';
 import { Link } from 'react-router-dom';
 
 
