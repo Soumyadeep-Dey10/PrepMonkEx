@@ -76,10 +76,10 @@ const Homepage = () => {
         <h2>Meet Our Team</h2>
         <div className="homepage-team-grid">
           {[
-            { name: 'ParthaSarathi', role: 'Prompt Engineer', image: parthaImage },
-            { name: 'Dip', role: 'Documentation Expert', image: dipImage },
-            { name: 'Soumyadeep', role: 'Web Dev', image: soumoImage },
-            { name: 'Biswajit', role: 'Full Stack Dev', image: biswaImage },
+            { name: 'ParthaSarathi', role: 'Frontend Developer', image: parthaImage },
+            { name: 'Dip', role: 'Web Developer', image: dipImage },
+            { name: 'Soumyadeep', role: 'Full Stack Developer', image: soumoImage },
+            { name: 'Biswajit', role: 'Full Stack Developer', image: biswaImage },
           ].map((member, index) => (
             <div key={index} className="homepage-team-member">
               <div className="homepage-member-image-container">
