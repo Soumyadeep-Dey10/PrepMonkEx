@@ -4,12 +4,9 @@ import cookieParser from 'cookie-parser';
 import  connection  from './config/connectDB.js';
 import userRouter from './routes/userRouter.js';
 import questionRouter from "./routes/questionRouter.js"
-
-
+import path from "path"
 
 import cors from 'cors';
-
-// Add this before your route definitions
 
 
 
@@ -19,7 +16,15 @@ dotenv.config();
 
 //creating an object of express
 const app = express();
-app.use(cors());
+
+// Configure CORS with the desired options
+const corsOptions = {
+    origin: "http://localhost:3050", // Allow requests from this origin
+    methods: ["GET", "POST"],       // Allow only GET and POST requests
+  };
+  
+  // Use CORS middleware with the options
+  app.use(cors(corsOptions))
 
 //The cookieParser middleware reads cookies from the incoming requests and makes them accessible via req.cookies
 app.use(cookieParser());
@@ -31,6 +36,15 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 
+// ---- code for deployment ----//
+if (process.env.NODE_ENV === 'production') {
+    const dirPath = path.resolve();
+
+    app.use(express.static("./frontend/dist"));
+    app.get("*", (req, res) => {
+        res.sendFile(path.resolve(dirPath, "./frontend/dist","index.html"))
+    })
+}
 
 // Use a default port if not provided in the environment variables
 const PORT = process.env.BACKEND_URL || 4000;
